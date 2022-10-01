@@ -1,0 +1,234 @@
+﻿
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <style>
+   @import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+body
+{
+	background: #E8EBF5;
+	flex: 1;
+	align-items: center;
+	justify-content: center;
+	margin: 0;
+	padding: 25px;
+	font-family: Lato;
+}
+
+.card{
+	background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgb(255 255 255 / 5%);
+}
+
+.card-header {
+		padding: 20px;
+		border-bottom: 1px solid #d5d0d0;
+}
+		
+	.steps{
+			display: flex;
+			column-count: 3;
+			justify-content: center;
+			align-items: center;
+	}
+		.step{
+			 width: 100%; 
+   		text-align: center; 
+   		border-bottom: 1px solid #877cdf; 
+   		line-height: 0.1em;
+   		margin: 10px 0 20px; 	
+		}
+				span{
+					padding: 10px 16px;
+					border: 1px solid #877cdf;
+					border-radius: 20px;
+					background:#fff;
+					box-shadow: 0px 3px 0px 0px #877cdf;
+				}
+			
+		.step.active span
+		{
+			
+					background: #A98BF9;
+					color: white;
+					border: 1px solid #A98BF9;
+				}
+			
+
+	
+	.card-body{
+		padding: 16px;
+		min-height: 250px;
+		display: flex;
+		justify-items: center;
+		align-items: center;
+		background: #fff;
+	border-radius: 10px;
+	box-shadow: 0 0 5px rgba(255,255,255,.04588);
+	}
+		.tabs
+		{
+				width: 100%;
+				height: 100%;
+				justify-content: center;
+				display: flex;
+				align-items: center;
+		}
+		.tab{
+					display: none;
+			}
+			
+		.tab.active{
+				display: block !important;
+			}
+		
+	
+	.card-footer{
+		padding: 16px;
+		border-top: 1px solid  #d5d0d0;
+		background: #fff;
+	border-radius: 10px;
+	box-shadow: 0 0 5px rgba(255,255,255,.04588);
+	}
+		
+	.card-footer button{
+    padding: 15px 25px;
+    width: 150px;
+    margin: 10px auto;
+    border: none;
+    border-radius: 0.085rem;
+    font-weight: 500;
+    font-size: 16px;
+    color: white;
+    background: #AA9FFE;
+    box-shadow: 0px 5px 0px 0px #877cdf;
+	 }
+			button:active{
+				outline: none;
+  			transform: translate(0px, 5px);
+  			-webkit-transform: translate(0px, 5px);
+  			box-shadow: 0px 1px 0px 0px;
+			}
+	
+
+@media only screen and (max-width: 420px)
+{
+	.card-footer .button{
+			width: 100%;
+		}
+	}
+
+    </style>
+</head>
+<body>
+<div class="card">
+		 <div class="card-header">
+				<div class="steps">
+						<div class="step active">
+							<span>
+									1
+							</span>	
+						</div>	
+						<div class="step">
+							<span>
+									2
+							</span>	
+						</div>	
+						<div class="step">
+							<span>
+									3
+							</span>	
+						</div>	
+						<div class="step">
+							<span>
+									4
+							</span>	
+						</div>
+			</div>
+		</div> 
+		<div id="cardBody" class="card-body">
+			<div class="tabs">
+					<div id="first" class="tab">
+							Tab 1
+					</div>
+					<div id="second" class="tab">
+						Tab 2	
+					</div>
+					<div id="third" class="tab">
+						Tab 3	
+					</div>
+					<div id="four" class="tab">
+						Tab 4
+					</div>
+			</div>
+		</div>
+		<div class="card-footer">
+			 <button id="prevBtn" onclick="next(-1)">Prev</button>	 
+			<button id="nextBtn" onclick="next(1)">Next</button>
+		</div>
+</div>
+
+    <script type="text/javascript">
+        var currentTab = 0;
+
+
+        showTab(currentTab);
+
+        function showTab(n) 
+				{
+
+            var x = document.getElementsByClassName("tab");
+						console.log(n)
+						console.log(x.length)
+            x[n].style.display = "block";
+
+            if (n == 0) {
+                document.getElementById("prevBtn").style.display = "none";
+            } else {
+                document.getElementById("prevBtn").style.display = "inline";
+            }
+
+
+            if (n == (x.length - 1)) {
+                document.getElementById("nextBtn").innerHTML = "Submit";
+            }
+            else {
+                document.getElementById("nextBtn").innerHTML = "Next";
+            }
+						
+            fixStepIndicator(n)
+        }
+
+        function next(n) 
+				{
+				
+            var x = document.getElementsByClassName("tab");
+
+            x[currentTab].style.display = "none";
+
+            currentTab = currentTab + n;
+
+            if (currentTab >= x.length) {
+
+                return false;
+            }
+
+            showTab(currentTab);
+        }
+
+        function fixStepIndicator(n)
+				{
+            var i, x = document.getElementsByClassName("step");
+            for (i = 0; i < x.length; i++) {
+                x[i].className = x[i].className.replace(" active", "");
+            }
+
+            x[n].className += " active";
+        }
+
+    </script>
+</body>
+</html>

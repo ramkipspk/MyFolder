@@ -1,0 +1,289 @@
+﻿       :root 
+        {
+            --Main: #5649a7;
+            --ToolTipIconBg: #d1c2dc; 
+            --global-font-family: Apercu;
+        }
+        body
+        {
+            font-family: var(--global-font-family);
+        }
+        .panel-default
+        {
+            border-color: #ddd;
+        }
+        .panel
+        {
+            margin-bottom: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-shadow: 0 1px 1px rgb(0 0 0 / 5%);
+        }
+        .panel-body
+        {
+            padding: 15px;
+        }
+        .ques_area
+        {
+            margin-top: 40px;
+        }
+        .sol_area
+        {
+            margin-top: 25px;
+        }
+        .sol_heading
+        {
+            font-size: 18px;
+            font-weight: 700;
+        }
+        .inner_ques
+        {
+            padding: 20px;
+            background-color: #fff
+        }
+        .tooltp
+        {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+        }
+        .tooltparea 
+        {
+            border-radius: 6px;
+            background-color: var(--ToolTipIconBg);
+            padding: 5px 20px 5px 20px;
+        }
+        .tooltpicon 
+        {
+            font-size: 20px;
+            color: #5649a7
+        }
+        .btn-answer 
+        {
+            background-color: var(--Main); 
+            color: White;
+        }
+
+    .video-container
+     {
+	    border-radius: 4px;
+	    margin: 0 auto;
+	    position: relative;
+	    display: flex;
+	    flex-direction: column;
+	    justify-content: center;
+	    box-shadow: 0px 8px 20px rgba(black, 0.4);
+
+	.video-wrapper 
+	{
+		width: 100%;
+		height: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	video
+	{
+		width: 100%;
+		height: 100%;
+		border-radius: 4px;
+	}
+}
+
+    .play-button-wrapper 
+    {
+	    position: absolute;
+	    top: 0;
+	    left: 0;
+	    right: 0;
+	    bottom: 0;
+	    display: flex;
+	    align-items: center;
+	    justify-content: center;
+	    width: 100%;
+	    height: auto;
+	    pointer-events: none;
+	#circle-play-b 
+	{
+		cursor: pointer;
+		pointer-events: auto;
+
+		svg {
+			width: 100px;
+			height: 100px;
+			fill: #fff;
+			stroke: #fff;
+			cursor: pointer;
+			background-color: rgba(black, 0.2);
+			border-radius: 50%;
+			opacity: 0.9;
+		}
+	}
+}
+
+        .progress-container
+        {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            margin-bottom: 30px;
+            max-width: 100%;
+            width: 350px;
+            align-items:center;
+        }
+        
+        .progress-container::before
+        {
+            content: ""; /* Mandatory with ::before */
+            background-color: #e0e0e0;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            height: 4px;
+            width: 100%;
+            z-index: -1;
+        }
+        
+        .progress
+        {
+            background-color: #3498db;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            height: 4px;
+            width: 0%;
+            z-index: -1;
+            transition: 0.4s ease;
+        }
+        
+        .circle
+        {
+            background-color: #ebe9f7;
+            color: #999;
+            height: 30px;
+            width: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.4s ease;
+            border: 1px solid black;
+            padding: 5px 10px 5px 10px; /* border-radius: 13px; */
+            border-top-left-radius: 16px;
+            border-top-right-radius: 16px;
+            border-bottom-left-radius: 16px;
+            border-bottom-right-radius: 16px;
+        }
+        
+        .circle.active
+        {
+            border-color: #5649a7;
+            background-color: #5649a7;
+        }
+        
+        .btns
+        {
+            background-color: #3498db;
+            color: #fff;
+            border: 0;
+            border-radius: 6px;
+            cursor: pointer;
+            font-family: inherit;
+            padding: 8px 30px;
+            margin: 5px;
+            font-size: 14px;
+        }
+        
+        .btns:active
+        {
+            transform: scale(0.98);
+        }
+        
+        .btns:focus
+        {
+            outline: 0;
+        }
+        
+        .btns:disabled
+        {
+            background-color: #e0e0e0;
+            cursor: not-allowed;
+        }
+         .itemfill
+        {
+            font-size: 15px;
+            color: white
+        }
+        .itemempty 
+        {
+            font-size: 15px;
+            color: #5649a7
+        }
+ 
+        .navbrbgcolor
+        {
+            background-color: var(--Main);
+        }
+        .usericn
+        {
+            justify-content: flex-end;
+        }
+        
+        .radio1
+        {
+            accent-color: green;
+            display:inline-block;
+            width:19px;
+            height:19px;
+            margin:-1px 4px 0 0;
+            vertical-align:middle;
+            cursor:pointer;
+            -moz-border-radius:  50%;
+            border-radius:  50%;
+        }
+        .logoicon
+        {
+            font-size: 18px;
+            color: white;
+            margin-left: 10px
+        }
+        .logoarea
+        {
+            color: White
+        }
+        .usericon 
+        {
+            width: 8%
+        }
+        .bredcrmbfill 
+        {
+            color: var(--Main);
+            font-weight: 700;
+            font-size: 17px
+        }
+        .bredcrmbempty
+        {
+            font-weight: 700;
+            font-size: 17px
+        }
+        .img-responsive
+        {
+            width: 100%;
+            height: auto;
+        }
+        .contentimg
+        {
+            width:12%;
+        }
+        .ulstyle 
+        {
+            list-style: none;
+        }
+        .Qlabel
+        {
+            font-weight: 600;
+            font-size: 20px
+        }
+    

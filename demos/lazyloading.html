@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+    <style>
+    .shite 
+    {
+        display:none; 
+    }
+    </style>
+</head>
+<body>
+<div class="shite">Content</div>
+<div class="shite">Content</div>
+<div class="shite">Content</div>
+<div class="shite">Content</div>
+<div class="shite">Content</div>
+<div class="shite">Content</div>
+<div class="shite">Content</div>
+<div class="shite">Content</div>
+
+
+<div class="shite">Content</div>
+<div class="shite">Content</div>
+<div class="shite">Content</div>
+<div class="shite">Content</div>
+<div class="shite">Content</div>
+<div class="shite">Content</div>
+<div class="shite">Content</div>
+
+<a href="#" id="load">Load More</a>
+<script>
+    $(function () {
+        $(".shite").slice(0, 1).show(); // select the first one
+        $("#load").click(function (e) { // click event for load more
+            e.preventDefault();
+            $(".shite:hidden").slice(0, 1).show(); // select next 1 hidden divs and show them
+            if ($(".shite:hidden").length == 0) { // check if any hidden divs still exist
+                $('#load').css("display", "none");
+                //alert("No more divs"); // alert if there are none left
+            }
+        });
+    });
+</script>
+</body>
+</html>
